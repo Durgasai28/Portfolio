@@ -1,43 +1,82 @@
+/* General Reset */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    line-height: 1.6;
-    background: #f9f9f9;
+    padding: 0;
+    background-color: #f8f9fa;
     color: #333;
 }
 
+/* Header */
 header {
-    background: #0078d7;
-    color: #fff;
-    padding: 20px;
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header p {
+    margin: 0.3rem 0;
+}
+
+/* Section Titles */
+section h2 {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: #0a58ca;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
     text-align: center;
 }
 
-header nav a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
+table th {
+    background-color: #0d6efd;
+    color: white;
 }
 
-section {
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 800px;
-    background: #fff;
-    border-radius: 8px;
+/* Lists */
+ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
 }
 
-h2 {
-    color: #0078d7;
+ul li {
+    margin-bottom: 0.5rem;
 }
 
-.project {
-    margin-bottom: 15px;
-}
-
+/* Footer */
 footer {
+    background: #212529;
+    color: white;
     text-align: center;
-    padding: 10px;
-    background: #0078d7;
-    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.my-5 {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
 }
