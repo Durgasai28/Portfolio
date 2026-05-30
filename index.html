@@ -4,230 +4,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naga Samba S V Durga Sai Budda - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description"
+    content="Portfolio of Naga Samba S V Durga Sai Budda, AI and Data Science student and aspiring data scientist.">
+  <title>Naga Samba S V Durga Sai Budda | Portfolio</title>
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
 
+    window.addEventListener("load", () => {
+      const navigation = performance.getEntriesByType("navigation")[0];
+
+      if (navigation && navigation.type === "reload") {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+
+      window.scrollTo(0, 0);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const profileButton = document.querySelector("[data-profile-button]");
+      const profileCard = document.querySelector("[data-profile-card]");
+
+      profileButton?.addEventListener("click", () => {
+        profileCard.classList.toggle("is-visible");
+        profileButton.textContent = profileCard.classList.contains("is-visible")
+          ? "Hide Profile"
+          : "View Profile";
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <!-- Header -->
-  <header class="bg-dark text-white text-center py-4">
-    <h1>Naga Samba S V Durga Sai Budda</h1>
-    <p>B.Tech CSE (AI & Data Science) | Aspiring Data Scientist</p>
-    <p>📧 durgasai3322@gmail.com | 📞 +91 9652677573 | <a href="https://linkedin.com" class="text-info">LinkedIn</a></p>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Durga Sai home">
+        <span class="brand-mark">DS</span>
+        <span>Durga Sai</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Career Objective -->
-  <section class="container my-5">
-    <h2 style="color:blue;">Career Objective</h2>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      AI & Data Science undergraduate with strong expertise in <b>Python programming</b> and hands-on experience in
-      full-stack web
-      development. Skilled in <b>HTML, CSS, JavaScript, React.js, Node.js, SQL</b> and REST API integration, with
-      experience building
-      responsive and scalable web applications. <b>Winner of the UDBHAV 2K26 National Hackathon</b>, demonstrating
-      strong problem-solving,
-      <b>leadership, and teamwork skills</b>. Passionate about software development and eager to contribute to
-      real-world projects while
-      continuously learning modern technologies.
-    </p>
-  </section>
-
-  <!-- Education -->
-  <section class="container my-5">
-    <h2 class="text-primary border-bottom pb-2">Education</h2>
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <thead class="table-dark">
-          <tr>
-            <th>Degree</th>
-            <th>Specialisation</th>
-            <th>Institution</th>
-            <th>Year</th>
-            <th>CGPA/Percentage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>B.Tech</td>
-            <td>&nbsp;&nbsp;AI & Data Science&nbsp;&nbsp;&nbsp;</td>
-            <td>SRKREC</td>
-            <td>2024-2028</td>
-            <td>9.10</td>
-          </tr>
-          <tr>
-            <td>HSE CBSE</td>
-            <td>MPC</td>
-            <td>JNV</td>
-            <td>2022-2024</td>
-            <td>88.88%</td>
-          </tr>
-          <tr>
-            <td>SSC CBSE</td>
-            <td>---</td>
-            <td>JNV</td>
-            <td>2021-2022</td>
-            <td>80%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-
-  <!-- Projects -->
-  <section class="container my-5">
-    <h2 class="text-primary border-bottom pb-2">Projects</h2>
-    <div class="row">
-
-      <!-- Study Sphere -->
-      <div class="col-md-4">
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="card-title">StudySphere – AI-Powered Peer Learning Platform</h5>
-            <p class="card-text">
-              A collaborative peer-learning platform developed during the UDBHAV 2K26 National Hackathon
-              that connects students based on complementary skills and learning
-              interests. The platform includes interactive quizzes, peer collaboration
-              workflows, and skill validation features to encourage knowledge
-              sharing and team-based learning.
-            </p>
-          </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">AI & Data Science Student</p>
+        <h1>Naga Samba S V Durga Sai Budda</h1>
+        <p class="hero-text">
+          Third year B.Tech student specialising in Computer Science Engineering (AI & Data Science). Skilled in
+          <strong>Python, SQL,
+            data visualisation, Exploratory data analysis(EDA)</strong> and machine learning concepts, with hands-on
+          experience <strong>building data-driven projects</strong>. Passionate about applying data science techniques
+          to solve
+          real-world and eager to contribute to innovative projects while
+          growing as a data-driven problem solver and <strong>collaborative team player</strong>.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button secondary" href="mailto:durgasai3322@gmail.com">Email Me</a>
+        </div>
+        <div class="quick-facts" aria-label="Portfolio highlights">
+          <span><strong>9.10 CGPA</strong></span>
+          <span><strong>100+ LeetCode problems </strong></span>
+          <span><strong>UDBHAV 2K26 Hackathon Winner</strong></span>
         </div>
       </div>
 
-      <!-- Heart Disease Prediction Web Application -->
-      <div class="col-md-4">
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Heart Disease Prediction Web Application</h5>
-            <p class="card-text">
-              A Full-Stack healthcare web application that predicts the
-              likelihood of heart disease using machine learning.
-              The system provides a responsive user interface for clinical
-              input collection and integrates backend APIs for real-time
-              prediction and result generation.
-            </p>
+      <!-- <div class="hero-visual" aria-label="Data science project snapshot">
+        <div class="visual-topline">
+          <span>model_pipeline.py</span>
+          <span class="status-dot">Live</span>
+        </div>
+        <div class="metric-grid">
+          <div>
+            <span class="metric-label">Records</span>
+            <strong>460K+</strong>
+          </div>
+          <div>
+            <span class="metric-label">Stack</span>
+            <strong>FastAPI</strong>
+          </div>
+          <div>
+            <span class="metric-label">Focus</span>
+            <strong>ML + Data</strong>
           </div>
         </div>
-      </div>
-
-      <!-- Portfolio Website 
-      <div class="col-md-4">
-        <div class="card shadow-sm mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Portfolio Website</h5>
-            <p class="card-text">
-              Built a responsive personal portfolio site using <b>HTML</b>,
-              <b>CSS</b>, and <b>Bootstrap</b>. Showcases academic background,
-              projects, and certifications in a recruiter-friendly format.
-              Implemented clean UI/UX design principles and mobile responsiveness
-              to ensure accessibility across devices.
-            </p>
-          </div>
+        <div class="chart" aria-hidden="true">
+          <span style="height: 42%"></span>
+          <span style="height: 66%"></span>
+          <span style="height: 54%"></span>
+          <span style="height: 82%"></span>
+          <span style="height: 70%"></span>
+          <span style="height: 92%"></span>
         </div>
+        <p class="visual-note">Python, Pandas, Scikit-learn, PostgreSQL, JavaScript, Vercel, Render</p>
       </div> -->
-
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="container my-5">
-    <h2 style="color:blue;">Skills</h2>
-    <p><b>Programming Languages:</b> Python, Java, C</p>
-    <p><b>Database & Query Languages:</b> SQL, MySQL, OracleSQL</p>
-
-    <p><b>Core Subjects:</b></p>
-    <ul>
-      <li>Data Structures & Algorithms</li>
-      <li>Database Management Systems (DBMS)</li>
-      <li>Object-Oriented Programming (OOP)</li>
-    </ul>
-
-    <p><b>Libraries & Tools : </b></p>
-    <ul>
-      <li><b>NumPy, Pandas</b> – Data manipulation and analysis</li>
-      <li>Matplotlib, Seaborn – Visualization and reporting</li>
-      <li>scikit-learn – <b>Machine learning models</b></li>
-      <li>Jupyter Notebook, VS Code, GitHub – Development & collaboration</li>
-    </ul>
-
-    <!-- <p><b>Analytical & Problem-Solving : </b></p>
-    <ul>
-      <li>Critical thinking </li>
-      <li>Interpreting data visualizations for actionable insights</li>
-      <li>Strong problem-solving mindset from competitive coding</li>
-    </ul> -->
-  </section>
-
-  <!-- Certificates -->
-  <section class="container my-5">
-    <h2 class="text-primary border-bottom pb-2">Certificates</h2>
-    <div class="row">
-
-      <!-- Cisco Python Certificate -->
-      <div>
-        <h5 class="title">Cisco Certified in Python (Intermediate) : </h5>
-        <p>
-          Earned certification from <strong>Cisco</strong> validating proficiency in Python programming.
-          Covered topics such as data structures, functions, error handling, and
-          application development. Demonstrated ability to write efficient,
-          well-structured code and apply Python to real-world problem solving.
-        </p>
+      <div class="profile-card" data-profile-card>
+        <button class="button secondary profile-button" type="button" data-profile-button >
+          View Profile
+        </button>
+        <div class="profile-frame" aria-label="Profile photo placeholder">
+          <img src="profile.jpeg" alt="Durga Sai profile photo" >
+        </div>
       </div>
+    </section>
 
-      <!-- Unstop Coding Challenge Certificates -->
-      <div>
-        <h5 class="itle">Unstop Weekly Coding Challenge Winner :</h5>
-        <p>
-          Secured multiple winner certificates in <strong>Unstop’s</strong> competitive programming
-          contests. Showcased strong algorithmic thinking, problem-solving skills,
-          and consistency under timed conditions. Enhanced coding proficiency
-          through diverse challenges in data structures, algorithms, and optimization.
-        </p>
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>Curious about data, practical about products.</h2>
       </div>
-
-    </div>
-  </section>
-
-  <!-- Coding -->
-  <section class="container my-5">
-    <h2 class="text-primary border-bottom pb-2">Coding Platforms</h2>
-    <div class="row">
-
-      <!-- Cisco Python Certificate -->
-      <div>
-        <h5 class="title">LeetCode: </h5>
+      <div class="about-layout">
         <p>
-          Earned certification from <strong>Cisco</strong> validating proficiency in Python programming.
-          Covered topics such as data structures, functions, error handling, and
-          application development. Demonstrated ability to write efficient,
-          well-structured code and apply Python to real-world problem solving.
+          I am passionate about applying data science techniques to solve real-world problems. My work blends
+          statistics, data analysis, machine learning, backend APIs, and responsive frontend development.
         </p>
+        <div class="education-panel">
+          <h3>Education</h3>
+          <div class="timeline-item">
+            <span>2024 - 2028</span>
+            <strong>SRKREC</strong>
+            <p>B.Tech, Computer Science Engineering (AI & Data Science), CGPA 9.10</p>
+          </div>
+          <div class="timeline-item">
+            <span>2022 - 2024</span>
+            <strong>Jawahar Navodaya Vidyalaya</strong>
+            <p>Higher Secondary Education, CBSE, MPC, 88.88%</p>
+          </div>
+          <div class="timeline-item">
+            <span>2021 - 2022</span>
+            <strong>Jawahar Navodaya Vidyalaya</strong>
+            <p>Secondary School Certificate, CBSE, 80.00%</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Unstop Coding Challenge Certificates -->
+    <section class="section alt-section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <p class="project-type">Hackathon Winner</p>
+          <h3>StudySphere</h3>
+          <p>AI-powered peer learning platform that matches students by complementary skills and learning needs,
+            validates expertise with auto-generated quizzes, and supports structured collaboration.</p>
+          <div class="tag-row">
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Vercel</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-type">Machine Learning</p>
+          <h3>Heart Disease Prediction</h3>
+          <p>Full-stack healthcare app using Logistic Regression, preprocessing, and feature selection to provide
+            real-time predictions from clinical inputs through a FastAPI backend.</p>
+          <div class="tag-row">
+            <span>Scikit-learn</span>
+            <span>Pandas</span>
+            <span>FastAPI</span>
+            <span>Render</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <p class="project-type">Data Platform</p>
+          <h3>All India Villages API & Explorer</h3>
+          <p>Cleaned multi-source Excel datasets, modeled hierarchical geographic data in PostgreSQL, and built an API
+            plus interactive UI for fast exploration of 460K+ village records.</p>
+          <div class="tag-row">
+            <span>Python</span>
+            <span>PostgreSQL</span>
+            <span>FastAPI</span>
+            <span>Pandas</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">Skills</p>
+        <h2>Technical toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div>
+          <h3>Programming</h3>
+          <p>Python, Java, C, SQL</p>
+        </div>
+        <div>
+          <h3>Data Science & ML</h3>
+          <p>NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, EDA, data cleaning, preprocessing, visualization</p>
+        </div>
+        <div>
+          <h3>Core CS</h3>
+          <p>Data Structures & Algorithms, DBMS, Object-Oriented Programming</p>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <p>GitHub, VS Code, Jupyter Notebook, Vercel, Render, PostgreSQL</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="achievements">
+      <div class="section-heading">
+        <p class="eyebrow">Proof of Work</p>
+        <h2>Achievements, certifications, and leadership</h2>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-panel">
+          <h3>Achievements</h3>
+          <ul>
+            <li>Winner - UDBHAV 2K26 National Level Hackathon, CSI Chapter</li>
+            <li>1st Prize - Elocution Competition on Women Empowerment, ISTE</li>
+          </ul>
+        </div>
+        <div class="proof-panel">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Cisco Certified in Python (Intermediate)</li>
+            <li>SQL (Intermediate) - HackerRank</li>
+            <li>Unstop Weekly Coding Challenge certificates</li>
+          </ul>
+        </div>
+        <div class="proof-panel">
+          <h3>Responsibility</h3>
+          <ul>
+            <li>Senior Under Officer, NCC, Jawahar Navodaya Vidyalaya</li>
+            <li>Team Lead, Team SparkX, UDBHAV 2K26 Hackathon</li>
+            <li>School Leader, Jawahar Navodaya Vidyalaya</li>
+          </ul>
+        </div>
+        <div class="proof-panel">
+          <h3>Coding Platforms</h3>
+          <ul>
+            <li>LeetCode: solved 100+ algorithm and data structure problems</li>
+            <li>Unstop: active participant in coding challenges</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
       <div>
-        <h5 class="itle">Unstop:</h5>
-        <p>
-          Secured multiple winner certificates in <strong>Unstop’s</strong> competitive programming
-          contests. Showcased strong algorithmic thinking, problem-solving skills,
-          and consistency under timed conditions. Enhanced coding proficiency
-          through diverse challenges in data structures, algorithms, and optimization.
-        </p>
+        <p class="eyebrow">Contact</p>
+        <h2>Let us build something useful with data.</h2>
       </div>
+      <div class="contact-actions">
+        <a class="button primary" href="mailto:durgasai3322@gmail.com">durgasai3322@gmail.com</a>
+        <a class="button secondary" href="tel:+919652677573">+91 9652677573</a>
+      </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2026 Naga Samba S V Durga Sai Budda | Portfolio</p>
+  <footer>
+    <p>&copy; 2026 Naga Samba S V Durga Sai Budda. Built with HTML and CSS.</p>
   </footer>
-
 </body>
 
 </html>
