@@ -124,9 +124,9 @@ p {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: 800px;
   margin-bottom: 20px;
-  font-size: clamp(42px, 8vw, 78px);
+  font-size: clamp(38px, 8vw,60px);
   line-height: 0.96;
   letter-spacing: 0;
 }
