@@ -14,6 +14,10 @@
 
   <title>Naga Samba S V Durga Sai Budda | Portfolio</title>
   <script>
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = savedTheme || preferredTheme;
+
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
@@ -31,6 +35,17 @@
     window.addEventListener("DOMContentLoaded", () => {
       const profileButton = document.querySelector("[data-profile-button]");
       const profileCard = document.querySelector("[data-profile-card]");
+      const themeToggle = document.querySelector("[data-theme-toggle]");
+      const themeLabel = document.querySelector("[data-theme-label]");
+
+      const updateThemeButton = () => {
+        const isDark = document.documentElement.dataset.theme === "dark";
+        themeToggle?.setAttribute("aria-pressed", String(isDark));
+
+        if (themeLabel) {
+          themeLabel.textContent = isDark ? "Light Mode" : "Dark Mode";
+        }
+      };
 
       profileButton?.addEventListener("click", () => {
         profileCard.classList.toggle("is-visible");
@@ -38,6 +53,15 @@
           ? "Hide Profile"
           : "View Profile";
       });
+
+      themeToggle?.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("portfolio-theme", nextTheme);
+        updateThemeButton();
+      });
+
+      updateThemeButton();
     });
   </script>
   <link rel="stylesheet" href="style.css">
@@ -57,6 +81,10 @@
         <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span data-theme-label>Dark Mode</span>
+        </button>
       </div>
     </nav>
   </header>
@@ -64,7 +92,7 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-copy">
-        <p class="eyebrow">Aspiring Data Scientist | AI & Data Science Student</p>
+        <p class="eyebrow" style="padding-top: 2px;">AI & Data Science Student</p>
         <h1>Naga Samba S V Durga Sai Budda</h1>
         <p class="hero-text">
           Third-year B.Tech student specializing in AI & Data Science. Skilled in Python, SQL, Data Analysis, Machine
@@ -73,12 +101,12 @@
           insights, optimize decision-making, and create real-world impact.</p>
 
         <div class="hero-actions">
-          <a class="button primary" href="resume.pdf">resume</a>
+          <a class="button primary" href="main_resume.pdf">resume</a>
           <a class="button secondary" href="#projects">View Projects</a>
           <a class="button secondary" href="mailto:durgasai3322@gmail.com">Email Me</a>
         </div>
         <div class="quick-facts" aria-label="Portfolio highlights">
-          <span><strong>9.10 CGPA</strong></span>
+          <span><strong>8.97 CGPA</strong></span>
           <span><strong>100+ LeetCode problems </strong></span>
           <span><strong>UDBHAV 2K26 Hackathon Winner</strong></span>
         </div>
@@ -114,7 +142,7 @@
           <div class="timeline-item">
             <span>2024 - 2028</span>
             <strong>SRKREC</strong>
-            <p>B.Tech, Computer Science Engineering (AI & Data Science), CGPA 9.10</p>
+            <p>B.Tech, Computer Science Engineering (AI & Data Science), CGPA 8.97</p>
           </div>
           <div class="timeline-item">
             <span>2022 - 2024</span>
@@ -146,7 +174,10 @@
             <span>HTML</span>
             <span>CSS</span>
             <span>LLM Integration</span>
-            <span>FireBase(DataBase)</span>
+            <span>FireBase</span>
+            <p style="margin-right: 100px;"><a href="https://studysphere-ten.vercel.app/" target="_blank">Live Demo</a>
+            </p>
+            <p><a href="https://github.com/Durgasai28/StudySphere.git">Live Code</a></p>
           </div>
         </article>
 
@@ -161,6 +192,9 @@
             <span>FastAPI</span>
             <span>Html & CSS</span>
             <span>JavaScript</span>
+            <p style="margin-right: 100px;"><a href="https://heart-disease-risk-pred.vercel.app/" target="_blank">Live
+                Demo</a></p>
+            <p><a href="https://github.com/Durgasai28/Heart_Disease.git">Live Code</a></p>
           </div>
         </article>
 
@@ -176,6 +210,8 @@
             <span>FastAPI</span>
             <span>Html & CSS</span>
             <span>JavaScript</span>
+            <p style="margin-right: 100px;"><a href="https://github.com/Durgasai28/villages-api.git">Live Code</a></p>
+            <!-- <p><a href="htpp://studysphere-ten.vercel.app/">Live Code</a></p> -->
           </div>
         </article>
       </div>
@@ -184,29 +220,33 @@
     <section class="section" id="skills">
       <div class="section-heading">
         <p class="eyebrow">Skills</p>
-        <h2>Technical Toolkit</h2>
+        <h2>Technical Toolkits</h2>
       </div>
       <div class="skills-grid">
         <div>
-          <h3>Programming Languages</h3>
+          <h3><span class="skill-icon">💻</span>Programming Languages</h3>
           <p>Python<br> Java<br> C Language <br> SQL</p>
         </div>
         <div>
-          <h3>Data Science & ML</h3>
+          <h3><span class="skill-icon">📊</span>Data Science & ML</h3>
           <p>NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, EDA, data cleaning, preprocessing, visualization,Feature
             Engineering, Machine Learning Fundamentals</p>
         </div>
         <div>
-          <h3>Core CS</h3>
+          <h3><span class="skill-icon">🧠</span>Core CS</h3>
           <p>Data Structures & Algorithms, DBMS, Object-Oriented Programming</p>
         </div>
         <div>
-          <h3>Development Tools and Platforms</h3>
-          <p>Git and GitHub, VS Code, Jupyter Notebook, Vercel, Render, PostgreSQL</p>
+          <h3><span class="skill-icon">🛠</span>Development Tools and Platforms</h3>
+          <p>Git and GitHub, VS Code, Jupyter Notebook, Vercel, Render</p>
         </div>
         <div>
-          <h3>Database Technologies</h3>
+          <h3><span class="skill-icon">🗄</span>Database Technologies</h3>
           <p>Oracle SQL, PostgreSQL, MySQL, NeonDB, SQL Query Optimization, Database Design</p>
+        </div>
+        <div>
+          <h3><span class="skill-icon">🧑🏼‍💻</span>Frontend</h3>
+          <p>HTML<br>CSS<br>JavaScript<br>React.js</p>
         </div>
       </div>
     </section>
@@ -214,7 +254,7 @@
     <section class="section alt-section" id="achievements">
       <div class="section-heading">
         <p class="eyebrow">Proof of Work</p>
-        <h2>Achievements, certifications, and leadership</h2>
+        <h2>Achievements, certifications, and Responsibilities</h2>
       </div>
       <div class="proof-grid">
         <div class="proof-panel">
@@ -263,7 +303,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Naga Samba S V Durga Sai Budda. Built with HTML and CSS.</p>
+    <p>&copy; 2025 Naga Samba S V Durga Sai Budda. Built with HTML, CSS and JavaScript.</p>
   </footer>
 </body>
 
