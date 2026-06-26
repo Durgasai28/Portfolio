@@ -244,6 +244,18 @@ h3 {
   background: transparent;
 }
 
+.icon-button {
+  gap: 8px;
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
 .quick-facts {
   display: flex;
   flex-wrap: wrap;
