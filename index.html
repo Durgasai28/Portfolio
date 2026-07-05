@@ -61,6 +61,114 @@
         updateThemeButton();
       });
 
+      const photoGallery = document.querySelector("[data-photo-gallery]");
+      const photoPrev = document.querySelector("[data-photo-prev]");
+      const photoNext = document.querySelector("[data-photo-next]");
+      const photoModal = document.querySelector("[data-photo-modal]");
+      const photoModalImage = document.querySelector("[data-photo-modal-image]");
+      const photoModalCaption = document.querySelector("[data-photo-modal-caption]");
+      const photoModalClose = document.querySelector("[data-photo-modal-close]");
+
+      const openPhotoModal = (button) => {
+        if (!photoModal || !photoModalImage || !photoModalCaption) {
+          return;
+        }
+
+        const image = button.querySelector("img");
+        photoModalImage.src = button.dataset.full || image.src;
+        photoModalImage.alt = image.alt;
+        photoModalCaption.textContent = button.dataset.caption || image.alt;
+        photoModal.removeAttribute("hidden");
+        document.body.classList.add("modal-open");
+        //pauseGalleryScroll();
+        photoModalClose?.focus();
+      };
+
+      const closePhotoModal = () => {
+        photoModal?.setAttribute("hidden", "");
+        document.body.classList.remove("modal-open");
+        //startGalleryScroll();
+      };
+
+      document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-gallery-image]");
+        if (button) {
+          openPhotoModal(button);
+        }
+      });
+
+      photoModalClose?.addEventListener("click", closePhotoModal);
+      photoModal?.addEventListener("click", (event) => {
+        if (event.target === photoModal) {
+          closePhotoModal();
+        }
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && photoModal && !photoModal.hasAttribute("hidden")) {
+          closePhotoModal();
+        }
+      });
+      const galleryImages = [
+        {
+          src: "images/algoUniversity.png",
+          caption: "AlgoUniversity Tech Fellowship achievement"
+        },
+        {
+          src: "images/BFSD310198 - Copy.jpg",
+          caption: "Bluestock Fintech internship certificate"
+        },
+        {
+          src: "images/udbhav - Copy.png",
+          caption: "UDBHAV hackathon achievement"
+        },
+        {
+          src: "images/leetcode1.png",
+          caption: "LeetCode progress"
+        },
+        {
+          src: "images/sql.png",
+          caption: "SQL Intermediate certificate"
+        },
+        {
+          src: "images/git.png",
+          caption: "Git and GitHub workshop"
+        },
+        {
+          src: "images/forage.png",
+          caption: "Tata Data Analyst Simulation"
+        },
+        {
+          src: "images/leetcode - Copy.png",
+          caption: "LeetCode progress"
+        },
+        {
+          src: "images/hach-clash.jpg",
+          caption: "Hack&Clash Coding Event"
+        }
+      ];
+
+      const galleryTrack = document.getElementById("galleryTrack");
+
+      // duplicate images automatically
+      const duplicatedImages = [...galleryImages, ...galleryImages];
+
+      duplicatedImages.forEach(image => {
+        const button = document.createElement("button");
+
+        button.className = "photo-item";
+        button.type = "button";
+
+        button.setAttribute("data-gallery-image", "");
+        button.setAttribute("data-full", image.src);
+        button.setAttribute("data-caption", image.caption);
+
+        button.innerHTML = `
+    <img src="${image.src}" alt="${image.caption}">
+  `;
+
+        galleryTrack.appendChild(button);
+      });
       updateThemeButton();
     });
   </script>
@@ -80,6 +188,7 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
+        <a href="#Gallery">Gallery</a>
         <a href="#contact">Contact</a>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
           <span class="theme-toggle-icon" aria-hidden="true"></span>
@@ -123,7 +232,7 @@
         </div>
         <div class="quick-facts" aria-label="Portfolio highlights">
           <span><strong>8.97 CGPA</strong></span>
-          <span><strong>130+ LeetCode problems </strong></span>
+          <span><strong>180+ LeetCode problems </strong></span>
           <span><strong>UDBHAV 2K26 Hackathon Winner</strong></span>
         </div>
       </div>
@@ -315,6 +424,31 @@
         </div>
       </div>
     </section>
+
+    <div class="photo-modal" data-photo-modal hidden role="dialog" aria-modal="true"
+      aria-label="Expanded gallery photo">
+      <div class="photo-modal-content">
+        <button class="photo-modal-close" type="button" data-photo-modal-close aria-label="Close photo popup">
+          &times;
+        </button>
+        <img src="" alt="" data-photo-modal-image>
+        <p data-photo-modal-caption></p>
+      </div>
+    </div>
+
+    <section class="section photo-section" id="Gallery">
+      <div class="section-heading">
+        <p class="eyebrow">Gallery</p>
+        <h2>Moments from my journey</h2>
+      </div>
+
+      <div class="photo-marquee">
+        <div class="photo-track" id="galleryTrack"></div>
+      </div>
+      <br><br>
+      <p class="eyebrow" style="text-align: center;">For full view click on the image</p>
+    </section>
+
 
     <section class="contact-section" id="contact">
       <div>
