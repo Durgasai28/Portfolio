@@ -12,7 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";</script>
+  <script>
+    //document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";
+    document.documentElement.dataset.theme = "dark";
+  </script>
+
+
 </head>
 
 <body>
@@ -43,7 +48,7 @@
         <div class="signal-row">
           <div><strong>8.97</strong><span>CGPA</span></div>
           <div><strong>1<sup>st </sup>Place</strong><span>UDBHAV 2K26 Hackathon</span></div>
-          <div><strong>250+</strong><span>Problems solved</span></div>
+          <div><strong>300+</strong><span>Problems solved</span></div>
           <div><strong>Top 8%</strong><span>ATF 2025</span></div>
         </div>
       </div>
@@ -183,7 +188,8 @@
         <article class="skill-card reveal">
           <div class="skill-icon data"><i data-lucide="chart-no-axes-combined"></i></div>
           <h3>Data and ML</h3>
-          <p>Pandas, NumPy, scikit-learn, EDA, feature engineering</p><span class="skill-index">02</span>
+          <p>Pandas, NumPy, scikit-learn, EDA, Model Training, feature engineering</p><span
+            class="skill-index">02</span>
         </article>
         <article class="skill-card reveal">
           <div class="skill-icon web"><i data-lucide="panels-top-left"></i></div>
@@ -219,7 +225,8 @@
           <article class="proof-item reveal"><span>01</span>
             <div>
               <p>Competition</p>
-              <h3>UDBHAV 2K26 National-Level Hackathon winner</h3>
+              <h3>UDBHAV 2K26 National-Level Hackathon winner</h3><br>
+              <h3>First Prize in the College Elocution Competition conducted by ISTE.</h3>
             </div><i data-lucide="trophy"></i>
           </article>
           <article class="proof-item reveal"><span>02</span>
@@ -238,7 +245,7 @@
           <article class="proof-item reveal"><span>04</span>
             <div>
               <p>Practice</p>
-              <h3>250+ coding problems solved across DSA topics</h3><br>
+              <h3>300+ coding problems solved across DSA topics</h3><br>
               <h3>Actively takes part in different tech events across multiple Platforms</h3>
             </div><i data-lucide="braces"></i>
           </article>
@@ -256,6 +263,7 @@
             data-lucide="arrow-left"></i></button><button type="button" data-gallery-next
           aria-label="Show next photos"><i data-lucide="arrow-right"></i></button></div>
       <div class="gallery" data-gallery aria-label="Portfolio gallery"></div>
+      <h5 style="text-align:center;">CLICK ON IMAGE FOR FULL VIEW</h5>
     </section>
     <section class="contact-section" id="contact">
       <div class="contact-grid reveal">
@@ -293,7 +301,7 @@
       const galleryImages = [
         "udbhav - Copy.png", "algoUniversity.png", "hach-clash.jpg", "leetcode1.png",
         "forage.png", "git.png", "sql.png", "data analytics.png", "english.png",
-        "leetcode-200.png", "leetcode - Copy.png", "BFSD310198 - Copy.jpg"
+        "leetcode-200.png", "leetcode - Copy.png", "BFSD310198 - Copy.jpg", "nit_ap.png"
       ];
       const captionFromName = (fileName) => fileName
         .replace(/\.[^.]+$/, "").replace(/[-_]/g, " ").replace(/\bcopy\b/gi, "").replace(/\s+/g, " ").trim();
